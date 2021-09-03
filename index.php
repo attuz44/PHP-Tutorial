@@ -7,8 +7,7 @@
     $age = 25;
     $stringOne = 'my email is ';
     $stringTwo = 'asheelprsd@hotmail.com.';
-    $radius = 25;
-    $pi = 3.14;
+
 
     //concatenate/ adding strings or variables together
     # echo 'Hey, my name is ' . NAME . ' and ' . $stringOne . $stringTwo;
@@ -31,6 +30,8 @@
 
     //basic math operators: +, -, *, /, **
     //order of operation (B(racket) I(ndices) D(ivision) M(ultiplication) A(ddition) S(ubtraction)) 
+    $radius = 25;
+    $pi = 3.14;
     # echo $pi * $radius **2;
     # echo 2 * (4 + 9) / 3;
     
@@ -46,6 +47,7 @@
     //number functions
     # echo floor($pi); 
     # echo ceil($pi);
+    # echo pi();
 
     //Indexed Arrays
     $allFName = array('Asheel', 'Shylin', 'Jone', 'Holland');
@@ -75,8 +77,8 @@
 
     //merging two arrays
     $allPeople = array_merge($allFName, $allLName);
-    print_r($allPeople);
-    echo count($allPeople);
+    # print_r($allPeople);
+    # echo count($allPeople);
 
     //Associative Arrays (key & value pairs)
     $attuzOne =array('Asheel' => 'Black', 'Shylin' => 'Pink', 'Jone' => 'Yellow', 'Holland' => 'Blue');
@@ -115,11 +117,11 @@
 
    $products = [
        ['name' => 'Rice', 'price' => 10],
-       ['name' => 'Flour', 'price' => 41],
+       ['name' => 'Flour', 'price' => 56],
        ['name' => 'Meat', 'price' => 45],
        ['name' => 'Milk', 'price' => 75],
-       ['name' => 'Sugar', 'price' => 44],
-       ['name' => 'Handwash', 'price' => 21]
+       ['name' => 'Sugar', 'price' => 24],
+       ['name' => 'Handwash', 'price' => 91]
    ];
 
    # foreach($products as $product){
@@ -134,7 +136,75 @@
     #   echo '<br />';
     #   $i++;
    # }
-      
+
+   //comparison booleans (true or false)
+   # echo true; //true = "1"
+   # echo false; //false = ""
+
+   //number comparisons 
+   # echo 5 <= 10;
+   # echo 5> 10;
+   # echo 5 == 10;
+   # echo 10 == 10;
+   # echo 5 != 10;
+   # echo 5 >= 5;
+
+   //string comparisons
+   # echo 'shaun' < 'yoshi';
+   # echo 'shaun' > 'yoshi';
+   # echo 'shaun' > 'Shaun';
+   # echo 'mario' == 'mario';
+   # echo 'mario' == 'Mario';
+
+   //loose vs strict equal comparison
+   # echo 5 == '5'; T
+   # echo 5 === '5'; F
+
+   //conditional statements
+    # $price = 25;
+
+    # if ($price > 25) {
+    #     echo 'The price is greater then 25';
+    # } elseif ($price == 25) {
+    #     echo 'The price is equal to 25';
+    # } else {
+    # echo 'The price is less then 25';
+    # }
+
+    $products = [
+        ['name' => 'Rice', 'price' => 10],
+        ['name' => 'Flour', 'price' => 56],
+        ['name' => 'Meat', 'price' => 45],
+        ['name' => 'Milk', 'price' => 75],
+        ['name' => 'Sugar', 'price' => 24],
+        ['name' => 'Handwash', 'price' => 91]
+    ];
+
+    // && is used to check two conditions
+    # foreach($products as $product){
+    #     if ($product['price'] < 50 && $product['price'] > 10){
+    #         echo $product['name'] . '<br />';
+    #     }  
+    # }
+
+    // || is used as "or"
+    # foreach($products as $product){
+    #     if ($product['price'] > 50 || $product['price'] < 40){
+    #         echo $product['name'] . '<br />';
+    #     }
+    # }
+
+    //breaks & continues
+    foreach($products as $product){
+        if($product['name'] === 'Milk'){
+            break;
+        }
+        if($product['price'] > 50){
+            continue; 
+        }
+        echo $product['name'] . '<br />';
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -155,6 +225,7 @@
     
     <p>Hello, my name is <?php echo NAME . ' and ' . $stringOne . $stringTwo;?> </p>
     
+    <!--
     <h1>Products</h1>
     <ul>
         <?php foreach($products as $product){?>
@@ -162,6 +233,18 @@
             <p><?php echo $product['price'];?></p>
         <?php } ?>
     </ul>
+
+    <div>
+        <ul>
+            <?php foreach ($products as $product){ ?>
+                <?php if($product['price'] < 50){ ?>
+                    <li><?php echo $product['name']; ?></li>
+                <?php } ?>
+            <?php } ?>    
+
+        </ul>
+    </div>
+    -->
        
 </body>
 </html>
