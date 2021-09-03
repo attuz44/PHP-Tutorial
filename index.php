@@ -77,6 +77,63 @@
     $allPeople = array_merge($allFName, $allLName);
     print_r($allPeople);
     echo count($allPeople);
+
+    //Associative Arrays (key & value pairs)
+    $attuzOne =array('Asheel' => 'Black', 'Shylin' => 'Pink', 'Jone' => 'Yellow', 'Holland' => 'Blue');
+    # echo $attuzOne['Shylin'];
+    # echo $attuzOne['Holland'];
+    //to add more data in an array
+    $attuzOne['Asheel'] = 'Purple';
+    # print_r($attuzOne);
+    # echo count($attuzOne);
+    $attuzTwo = array_merge($attuzOne, $allPeople);
+    # print_r($attuzTwo);
+
+    //multi-dimensional arrays
+    $Vehicle = [
+        ['Make' => 'Nissan', 'Model' => 'GTR', 'Engine' => '6L'],
+        ['Make' => 'Hyundai', 'Model' => 'Tucson', 'Engine' => '2L'],
+        ['Make' => 'Toyota', 'Model' => 'Supra', 'Engine' => '5.4L']
+    ];
+    # echo $Vehicle[2]['Model'];
+    $Vehicle[] = ['Make' => 'Ford', 'Model' => 'Raptor', 'Engine' => '4L'];
+    # print_r($Vehicle);
+
+    //to delete the last value of any array
+    $Deleted = array_pop($Vehicle);
+    # print_r($Deleted);
+
+    //loops 
+    $Cars = ['Mitsubishi', 'Toyota', 'Hyundai', 'Volvo', 'Honda'];
+    #    for($i = 0; $i < count($Cars); $i++){
+    #       echo $Cars[$i] . '<br />';
+    #   }
+
+    # foreach($Cars as $Car){
+    #     echo $Car . '<br />';
+    # }
+
+   $products = [
+       ['name' => 'Rice', 'price' => 10],
+       ['name' => 'Flour', 'price' => 41],
+       ['name' => 'Meat', 'price' => 45],
+       ['name' => 'Milk', 'price' => 75],
+       ['name' => 'Sugar', 'price' => 44],
+       ['name' => 'Handwash', 'price' => 21]
+   ];
+
+   # foreach($products as $product){
+   #  echo $product['name'] . ' - ' . $product['price'];
+   #  echo '<br />';
+   # }
+
+   # $i = 0;
+
+   # while($i < count($products)){
+    #   echo $products[$i]['name'];
+    #   echo '<br />';
+    #   $i++;
+   # }
       
 ?>
 
@@ -97,6 +154,14 @@
     <div><?php echo $stringOne . $stringTwo;?></div>
     
     <p>Hello, my name is <?php echo NAME . ' and ' . $stringOne . $stringTwo;?> </p>
+    
+    <h1>Products</h1>
+    <ul>
+        <?php foreach($products as $product){?>
+            <h4><?php echo $product['name'];?></h4>
+            <p><?php echo $product['price'];?></p>
+        <?php } ?>
+    </ul>
        
 </body>
 </html>
