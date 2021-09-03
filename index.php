@@ -46,6 +46,37 @@
     //number functions
     # echo floor($pi); 
     # echo ceil($pi);
+
+    //Indexed Arrays
+    $allFName = array('Asheel', 'Shylin', 'Jone', 'Holland');
+    $allLName =array('Prasad', 'Chand', 'Usamate', 'Tom');
+    $allAges = array(25, 23, 43, 29);
+    # echo $allFName[3];
+    # echo $allLName[2];
+    # echo $allAges[1];
+    //print_r is used to echo arrays in readable format
+    # print_r($allFName);   
+    # print_r($allLName);
+    # print_r($allAges);
+
+    //to edit data in an array
+    $allLName[3] = 'Loos';
+    # print_r($allLName);
+
+    //to add more data in an array
+    $allFName[] = 'Nathan';
+    $allLName[] = 'Maguire';
+    $allAges[] = 16;
+    # print_r($allFName);   
+    # print_r($allLName);
+    # print_r($allAges);
+
+    # echo count($allAges);
+
+    //merging two arrays
+    $allPeople = array_merge($allFName, $allLName);
+    print_r($allPeople);
+    echo count($allPeople);
       
 ?>
 
